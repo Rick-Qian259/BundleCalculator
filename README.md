@@ -43,3 +43,6 @@ A successfully passing test(s) that demonstrates the following output: (The form
 Clone this project into the Intellij, and install the gradle in Intellij, then open the project folder in Intellij.
 Go to the "src/main/java/com.JR.codeTest/Implementation/Main", right click and run "Main.main()".
 
+## Unit Tests Results
+![image](https://github.com/Rick-Qian259/BundleCalculator/blob/master/Images/2191630407735_.pic.jpg)
+
