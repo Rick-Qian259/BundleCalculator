@@ -13,16 +13,9 @@ import java.util.logging.Logger;
 @Setter
 @NoArgsConstructor
 public class Image extends Brand {
-    private Logger log = Logger.getLogger("InfoLogging");
     final private String[] childrenBundles = {"5", "10",};
-
+    private Logger log = Logger.getLogger("InfoLogging");
     private Map<String, Double> bundlesAndPrice = new HashMap<String, Double>();
-
-    void initialMap() {
-        bundlesAndPrice.put("5", 450.0);
-        bundlesAndPrice.put("10", 800.0);
-//        bundlesAndPrice.put("9", 1147.50);
-    }
 
     public Image(String amount, String name) {
         setName(name);
@@ -31,12 +24,17 @@ public class Image extends Brand {
         initialMap();
     }
 
+    void initialMap() {
+        bundlesAndPrice.put("5", 450.0);
+        bundlesAndPrice.put("10", 800.0);
+    }
+
     @Override
     public void printOutput() {
         int[] total = Arrays.stream(getOptimiseCombination().split(" ")).mapToInt(Integer::parseInt).toArray();
         int totalNumber = Arrays.stream(total).sum();
         String outputInformation = calculateMoney(total);
-        outputInformation = totalNumber + " " + "IMG $" +outputInformation;
+        outputInformation = totalNumber + " " + "IMG $" + outputInformation;
         getLog().info(outputInformation);
     }
 
@@ -63,30 +61,11 @@ public class Image extends Brand {
             }
             temp = total[i];
         }
-        if(total.length ==1 || (total.length ==2  && total[0] != total[1])) {
+        if (total.length == 1 || (total.length == 2 && total[0] != total[1])) {
             price = bundlesAndPrice.get(String.valueOf(temp));
             result = result + count + " * " + temp + " $" + price * count + "\n";
             totalPrice += price * count;
         }
-        return totalPrice + "\n"+result;
+        return totalPrice + "\n" + result;
     }
-
-//    public Image(String name) {
-//        setName(name);
-//    }
-
-//    @Override
-//    public void calculate() {
-//        AlgorithmImplement algorithmImplement = new AlgorithmImplement();
-//        String temporary = algorithmImplement.order(getAmount(), bundles);
-//        String[] temp = temporary.split(" / ");
-//        setOptimiseNumber(Integer.valueOf(temp[0]));
-//        setOptimiseCombination(temp[1]);
-//    }
-
-
-//    @Override
-//    public void printOutput() {
-//        log.info("");
-//    }
 }

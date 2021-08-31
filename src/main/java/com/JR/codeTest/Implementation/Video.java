@@ -13,19 +13,7 @@ import java.util.Map;
 @NoArgsConstructor
 public class Video extends Brand {
     final private String[] childrenBundles = {"3", "5", "9",};
-    //    Map<String,Double> bundlesAndPrice = new HashMap<String,Double>() { {
-//        bundlesAndPrice.put("3",570.0);
-//        bundlesAndPrice.put("5",900.0);
-//        bundlesAndPrice.put("9",1530.0);
-//    }};
     private Map<String, Double> bundlesAndPrice = new HashMap<String, Double>();
-
-    void initialMap() {
-        bundlesAndPrice.put("3", 570.0);
-        bundlesAndPrice.put("5", 900.0);
-        bundlesAndPrice.put("9", 1530.0);
-    }
-
 
     public Video(String amount, String name) {
         setName(name);
@@ -34,27 +22,18 @@ public class Video extends Brand {
         initialMap();
     }
 
-//    public Video(String name) {
-//        setName(name);
-//    }
-
-//    @Override
-//    public void calculate() {
-//        AlgorithmImplement algorithmImplement = new AlgorithmImplement();
-//        String temporary = algorithmImplement.order(getAmount(), bundles);
-//        String[] temp = temporary.split(" / ");
-//        setOptimiseNumber(Integer.valueOf(temp[0]));
-//        setOptimiseCombination(temp[1]);
-////        algorithmImplement.order(getMoney(), bundles);
-////        System.out.println(algorithmImplement.order(getMoney(), bundles));
-//    }
+    void initialMap() {
+        bundlesAndPrice.put("3", 570.0);
+        bundlesAndPrice.put("5", 900.0);
+        bundlesAndPrice.put("9", 1530.0);
+    }
 
     @Override
     public void printOutput() {
         int[] total = Arrays.stream(getOptimiseCombination().split(" ")).mapToInt(Integer::parseInt).toArray();
         int totalNumber = Arrays.stream(total).sum();
         String outputInformation = calculateMoney(total);
-        outputInformation = totalNumber + " " + "VID $" +outputInformation;
+        outputInformation = totalNumber + " " + "VID $" + outputInformation;
         getLog().info(outputInformation);
     }
 
@@ -81,11 +60,11 @@ public class Video extends Brand {
             }
             temp = total[i];
         }
-        if(total.length ==1 || (total.length ==2  && total[0] != total[1])) {
+        if (total.length == 1 || (total.length == 2 && total[0] != total[1])) {
             price = bundlesAndPrice.get(String.valueOf(temp));
             result = result + count + " * " + temp + " $" + price * count + "\n";
             totalPrice += price * count;
         }
-        return totalPrice + "\n"+result;
+        return totalPrice + "\n" + result;
     }
 }

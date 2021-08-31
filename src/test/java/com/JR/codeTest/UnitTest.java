@@ -2,25 +2,16 @@ package com.JR.codeTest;
 
 import com.JR.codeTest.Implementation.Audio;
 import com.JR.codeTest.Implementation.Image;
-//import com.JR.codeTest.Implementation.OrderProcess;
 import com.JR.codeTest.Implementation.Video;
-//import com.sun.org.apache.xpath.internal.operations.Or;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 public class UnitTest {
 
-//    @DisplayName("Test MessageService.get()")
-//    @Test
-//    void testGet() {
-//        Assertions.assertEquals("Hello Junit5", MessageService.get());
-//    }
-
     String amount = "10";
     String brandName = "IMG";
     int[] testData = {10};
-
 
     @DisplayName("Test img output with input 10")
     @Test
@@ -110,11 +101,4 @@ public class UnitTest {
         Assertions.assertEquals("427.5\n" + "1 * 3 $427.5\n", audio.calculateMoney(testData));
     }
 
-//    @DisplayName("Test Audio output with input 1")
-//    @Test
-//    void testOrder(){
-//        String input = "10 IMG\n" + "15 FLAC\n" + "13 VID\n";
-//        OrderProcess or = new OrderProcess();
-////        Assertions.assertEquals(or.processOrder(input));
-//    }
 }

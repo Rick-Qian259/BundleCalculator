@@ -16,12 +16,6 @@ public class Audio extends Brand {
 
     private Map<String, Double> bundlesAndPrice = new HashMap<String, Double>();
 
-    void initialMap() {
-        bundlesAndPrice.put("3", 427.50);
-        bundlesAndPrice.put("6", 810.0);
-        bundlesAndPrice.put("9", 1147.50);
-    }
-
     public Audio(String amount, String name) {
         setName(name);
         setAmount(amount);
@@ -33,12 +27,18 @@ public class Audio extends Brand {
         setName(name);
     }
 
+    void initialMap() {
+        bundlesAndPrice.put("3", 427.50);
+        bundlesAndPrice.put("6", 810.0);
+        bundlesAndPrice.put("9", 1147.50);
+    }
+
     @Override
     public void printOutput() {
         int[] total = Arrays.stream(getOptimiseCombination().split(" ")).mapToInt(Integer::parseInt).toArray();
         int totalNumber = Arrays.stream(total).sum();
         String outputInformation = calculateMoney(total);
-        outputInformation = totalNumber + " " + "FIAC $" +outputInformation;
+        outputInformation = totalNumber + " " + "FIAC $" + outputInformation;
         getLog().info(outputInformation);
     }
 
@@ -65,22 +65,12 @@ public class Audio extends Brand {
             }
             temp = total[i];
         }
-        if(total.length ==1 || (total.length ==2  && total[0] != total[1])) {
+        if (total.length == 1 || (total.length == 2 && total[0] != total[1])) {
             price = bundlesAndPrice.get(String.valueOf(temp));
             result = result + count + " * " + temp + " $" + price * count + "\n";
             totalPrice += price * count;
         }
-        return totalPrice + "\n"+result;
+        return totalPrice + "\n" + result;
     }
-
-    //    "427.50","810",,"1147.50"
-//    @Override
-//    public void calculate() {
-//        AlgorithmImplement algorithmImplement = new AlgorithmImplement();
-//        String temporary = algorithmImplement.order(getAmount(), bundles);
-//        String[] temp = temporary.split(" / ");
-//        setOptimiseNumber(Integer.valueOf(temp[0]));
-//        setOptimiseCombination(temp[1]);
-//    }
 
 }

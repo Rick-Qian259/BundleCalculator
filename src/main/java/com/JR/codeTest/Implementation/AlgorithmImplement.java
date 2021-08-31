@@ -7,10 +7,11 @@ import java.util.Arrays;
 import java.util.logging.Logger;
 
 public class AlgorithmImplement implements AlgorithmInterface {
-    private static Logger log = Logger.getLogger("InfoLogging");
+    private static final Logger log = Logger.getLogger("InfoLogging");
 
     /**
      * This method returns a string for each brand's children.
+     *
      * @param amount
      * @param bundles
      * @return a String, format likes "2 / 5 3", the number before slash is the minimal numbers of bundles.
@@ -32,6 +33,7 @@ public class AlgorithmImplement implements AlgorithmInterface {
 
     /**
      * Calculate the minimal number of bundles.
+     *
      * @param amount
      * @param bundles
      * @return the minimal number of bundles
@@ -60,6 +62,7 @@ public class AlgorithmImplement implements AlgorithmInterface {
 
     /**
      * According to the minimal number, to calculate the specific cases.
+     *
      * @param reverseArrays
      * @param bundles
      * @return

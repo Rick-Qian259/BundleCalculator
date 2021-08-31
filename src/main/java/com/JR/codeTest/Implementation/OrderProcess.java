@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class OrderProcess implements OrderProcessInterface {
     private final Logger logger = Logger.getLogger("InfoLogging");
-    private List<String> brandArraylist = new ArrayList<>();
+    private final List<String> brandArraylist = new ArrayList<>();
 
 
     public void initialiseBrandList() {
@@ -40,7 +40,6 @@ public class OrderProcess implements OrderProcessInterface {
                 else if (data.contains("VID")) brand = new Video(amount, brandName);
                 brand.calculateMinimalNumberAndCases();
                 brand.printOutput();
-//                System.out.println(data.split(" ")[1]);
             } else {
                 logger.warning("The input contains not existing brand category.");
             }
