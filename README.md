@@ -44,5 +44,8 @@ Clone this project into the Intellij, and install the gradle in Intellij, then o
 Go to the "src/main/java/com.JR.codeTest/Implementation/Main", right click and run "Main.main()".
 
 ## Unit Tests Results
-![image](https://github.com/Rick-Qian259/BundleCalculator/blob/master/Images/2191630407735_.pic.jpg)
+<!-- ![image](https://github.com/Rick-Qian259/BundleCalculator/blob/master/Images/2191630407735_.pic.jpg) -->
+<div align="left">
+	<img src="https://github.com/Rick-Qian259/BundleCalculator/blob/master/Images/2191630407735_.pic.jpg" alt="Editor" width="400" height="400">
+</div>
 
