@@ -56,6 +56,7 @@ And it also tests the negative and positive results.
 <div align="left">
 	<img src="https://github.com/Rick-Qian259/BundleCalculator/blob/master/Images/UnitTest2.0.jpg" alt="Editor" width="400" height="400">
 </div>
+
 ## The project directory structure changes
 I redesigned the project logic and delete the last edition's brand, image, video, flac classes. Replaced them with a Enum class brand, it simplified programm logic.
 The comparsion shows below.
