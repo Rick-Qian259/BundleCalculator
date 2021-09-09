@@ -12,6 +12,13 @@ import java.util.logging.Logger;
 public class OrderProcessor {
     private final Logger log = Logger.getLogger("InfoLogging");
 
+    /**
+     * process the input String, and calculate the optimised cases, then add these cases into a String list
+     *
+     *
+     * @param input
+     * @return
+     */
     public List<String> processInputData(String input) {
         List<String> inputData = Arrays.asList(input.split("\n"));
         List<String> resultList = new ArrayList<>();
@@ -35,6 +42,8 @@ public class OrderProcessor {
         return resultList;
     }
 
+//  check whether the input brand name is stored in the program,
+//  if not, return false and program will exit.
     private boolean isInEnum(String input) {
         for (Brand brand : Brand.values()) {
             if (input.equals(brand.name())) {

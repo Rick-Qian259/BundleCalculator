@@ -37,6 +37,12 @@ public class Algorithm {
         return parseNumber(result.split("/")[1]);
     }
 
+    /**
+     * If the input has number less than 1, this method will return false.
+     * @param amount
+     * @param bundles
+     * @return
+     */
     private boolean validationInput(int amount, int[] bundles) {
         return (amount > 0) && (Arrays.stream(bundles).noneMatch(x -> x < 1));
     }
@@ -51,14 +57,12 @@ public class Algorithm {
         for (int i = 1; i < inputArray.length; i++) {
             if (!inputArray[i].equals(inputArray[i - 1])) {
                 result.append(count).append(":").append(inputArray[i - 1]).append(" ");
-//                System.out.println(count+":"+inputArray[i-1]);
                 count = 1;
             } else {
                 count++;
             }
             if (i == inputArray.length - 1) {
                 result.append(count).append(":").append(inputArray[i]);
-//                System.out.println(count+":"+inputArray[i]);
             }
         }
         if (inputArray.length == 1) {
@@ -67,6 +71,12 @@ public class Algorithm {
         return result.toString();
     }
 
+    /**
+     * Calculate the minimal number of bundles.
+     * @param amount
+     * @param bundles
+     * @return the minimal number of bundles
+     */
     private String calculateTheOptimiseNumbers(int amount, int[] bundles) {
         String result;
         int[] dpArrays = new int[amount + 1];       // the dynamic programming algorithm array to store the case.
@@ -89,6 +99,12 @@ public class Algorithm {
         return result;
     }
 
+    /**
+     * According to the minimal number, to calculate the specific cases.
+     * @param reverseArrays
+     * @param bundles
+     * @return
+     */
     private String calculateTheCombination(int[] reverseArrays, int[] bundles) {
         StringBuilder result = new StringBuilder();
         if (reverseArrays[reverseArrays.length - 1] == -1) {

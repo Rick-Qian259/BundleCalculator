@@ -19,13 +19,13 @@ public enum Brand {
     private int[] priceBundle;
     private double[] priceValue;
 
-    //   2:5 1:3
+//       2:5 1:3
     public String calculateOptimisedCases(String amount, Brand brand) {
         Algorithm algorithm = new Algorithm();
         return algorithm.order(amount, brand.getPriceBundle());
     }
 
-    //      13 VID $2370
+//      13 VID $2370
 //      2 x 5 $1800
 //      1 x 3 $570
 //      1:10
@@ -50,6 +50,8 @@ public enum Brand {
         return result.toString();
     }
 
+//  This method would check whether all element of the inputArray is in the brand priceBundle
+//  if not, return false.
     private boolean checkCombination(String[] inputArray, Brand brand) {
         int count = 0;
         for (String input : inputArray) {
@@ -63,13 +65,15 @@ public enum Brand {
         return !(count == inputArray.length);
     }
 
-    //    input: "3" 50.0
-    //    output 150.0
+//        input: "3" 50.0
+//        output 150.0
     private double calculateThePrice(String amount, double price) {
         int amountInt = Integer.parseInt(amount);
         return amountInt * price;
     }
 
+//  For example, for FLAC(2, new int[]{3, 6, 9}, new double[]{427.5, 810, 1147.5}),
+//  the inputBundle is 9, this method will return 2, because Flac.priceBundle[2] = 9.
     private int findBundleIndex(String inputBundle, Brand brand) {
         for (int i = 0; i < brand.priceBundle.length; i++) {
             if (inputBundle.equals(brand.priceBundle[i] + "")) {
@@ -79,7 +83,8 @@ public enum Brand {
         return -1;
     }
 
-    //    1:9:$1147.5 1:6:$810.0
+//  input format: 1:9:$1147.5 1:6:$810.0
+//  output format: 1:9:$1147.50 1:6:$810 | FLAC:15:$1957.50
     private String appendTotalPrice(String input, Brand brand) {
         String result;
         String[] singleInput = input.split(" ");
@@ -89,7 +94,6 @@ public enum Brand {
             totalNumber += (Integer.parseInt(sing.split(":")[0])) * (Integer.parseInt(sing.split(":")[1]));
             totalPrice += Double.parseDouble(sing.split(":")[2]);
         }
-//        1:9:$1147.50 1:6:$810 | FLAC:15:$1957.50
         result = input + "/" + brand.name() + ":" + totalNumber + ":$" + totalPrice;
         return result;
     }

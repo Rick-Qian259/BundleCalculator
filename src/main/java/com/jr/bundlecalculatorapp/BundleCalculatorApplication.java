@@ -10,7 +10,6 @@ public class BundleCalculatorApplication {
         OrderProcessor orderProcessor = new OrderProcessor();
         outputList = orderProcessor.processInputData(input);
         orderProcessor.printOutput(outputList);
-//        System.out.printf("hello world");
     }
 
 }
