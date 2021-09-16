@@ -1,4 +1,4 @@
-# BundleCalculator Modification 2.0
+# BundleCalculator Modification 3.0
 
 ## Main tech stacks and tools
 - Lombok
@@ -51,17 +51,15 @@ A successfully passing test(s) that demonstrates the following output: (The form
 3. Change the Java version to Java 8 in intellij. <br>
 4. Go to the src/main/java/com/jr/bundlecalculatorapp/ open the BundleCalculatorApplication.java and run the main function.
 ## Unit Tests Results
-This edition of code passes all the unit tests which include all the public method.
-And it also tests the negative and positive results.
+At this time, the unit test reached 100% coverage of the project. 
 <div align="left">
-	<img src="https://github.com/Rick-Qian259/BundleCalculator/blob/master/Images/UnitTest2.0.jpg" alt="Editor" width="400" height="400">
+	<img src="https://github.com/Rick-Qian259/BundleCalculator/blob/master/Images/TestCoverage.jpg" alt="Editor" width="700" height="400">
 </div>
 
-## The project directory structure changes
+<!-- ## The project directory structure changes
 I redesigned the project logic and delete the last edition's brand, image, video, flac classes. Replaced them with a Enum class brand, it simplified programm logic.
 The comparsion shows below.
 <div align="left">
 	<img src="https://github.com/Rick-Qian259/BundleCalculator/blob/master/Images/directory%20structure1.0.jpg" alt="Editor" width="400" height="400">
 	<img src="https://github.com/Rick-Qian259/BundleCalculator/blob/master/Images/directory%20structure2.0.jpg" alt="Editor" width="400" height="400">
-
-</div>
+</div> -->
